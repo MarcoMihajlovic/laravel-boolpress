@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('guest-homepage ');
+Route::get('/posts', 'PostController@index')->name('posts');
+Route::get('/posts/{slug}', 'PostController@show')->name('post');
+
 
 Auth::routes();
 
