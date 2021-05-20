@@ -22,6 +22,12 @@ Route::prefix('posts')
         Route::get('/{slug}', 'PostController@show')->name('post');
     });
 
+    Route::prefix('categories')
+    ->group(function(){
+        Route::get('/', 'CategoryController@index')->name('categories');
+        Route::get('/{slug}', 'CategoryController@show')->name('category');
+    });
+
 
 Auth::routes();
 

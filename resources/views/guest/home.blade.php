@@ -81,12 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    MegaBlog
                 </div>
 
                 <div class="links">
                     <a href="{{route('guest-homepage')}}">Home</a>
                     <a href="{{route('posts')}}">I nostri Post</a>
+                    <a href="{{route('categories')}}">Le nostre categorie</a>
                 </div>
             </div>
         </div>
