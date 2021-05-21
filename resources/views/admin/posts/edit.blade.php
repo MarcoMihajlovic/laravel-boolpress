@@ -40,7 +40,7 @@
                     @enderror
                 </div>
 
-                {{-- <div class="form-group">
+                <div class="form-group">
                     <p>Seleziona i tag:</p>
                     @foreach ($tags as $tag)
                         <div class="form-check @error('tags') is-invalid @enderror">
@@ -56,7 +56,7 @@
                     @error('tags')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div> --}}
+                </div>
                 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
