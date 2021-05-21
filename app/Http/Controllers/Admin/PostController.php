@@ -45,7 +45,7 @@ class PostController extends Controller
     {
         $request-> validate([
             'title' => 'required|max:255',
-            'content' => 'requried' 
+            'content' => 'required' 
         ]);
 
         $form_data = $request->all();
@@ -112,11 +112,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
         $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'requried' 
+            'title' => 'required|unique:posts|max:255',
+            'content' => 'required' 
         ]);
 
         $form_data = $request->all();
@@ -142,12 +142,8 @@ class PostController extends Controller
         }
 
         $post->update($form_data);
-
-        $new_post = new Post();
-
-        $new_post->save();
         
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -156,8 +152,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post -> delete();
+        return redirect()->route('posts.index');
     }
 }
