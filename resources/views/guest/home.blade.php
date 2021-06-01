@@ -88,6 +88,7 @@
                     <a href="{{route('guest-homepage')}}">Home</a>
                     <a href="{{route('posts')}}">I nostri Post</a>
                     <a href="{{route('categories')}}">Le nostre categorie</a>
+                    <a href="{{route('categories')}}">Le nostre categorie</a>
                 </div>
             </div>
         </div>
